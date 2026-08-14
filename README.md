@@ -12,18 +12,28 @@ no dependencies — upload the files to any hosting and it works.
 
 ```
 index.html                      Homepage (hero, services, why us, AI & search, process, FAQ, contact)
-services/
-  seo-geo-aeo.html              SEO, GEO & AEO
-  web-development.html          Website Design & Development
-  ai-chatbot-automation.html    AI Chatbots & Automation
-  paid-advertising.html         Meta & Google Ads
-  social-media-marketing.html   Social Media Marketing
-  lead-generation.html          Lead Generation Campaigns
+services/                       Six global service pages
+  seo-geo-aeo.html · web-development.html · ai-chatbot-automation.html
+  paid-advertising.html · social-media-marketing.html · lead-generation.html
+oman/                           Oman local-SEO landing pages
+  index.html                    Hub: Digital Marketing & Web Development Company in Oman
+  website-development-oman.html · digital-marketing-oman.html
+  social-media-marketing-oman.html · ecommerce-website-development-oman.html
+  shopify-website-development-oman.html · whatsapp-automation-oman.html
+  ai-chatbot-development-oman.html · seo-company-oman.html
+blog/                           Blog index + articles (BlogPosting schema)
+  index.html · how-to-rank-on-chatgpt-geo-aeo.html
+  whatsapp-business-api-guide.html · seo-vs-google-ads.html
 css/style.css                   Design system (dark theme, teal brand accent)
 js/main.js                      Scroll reveals, counters, rotator, accordion, mobile nav, form
-assets/                         SVG logo + favicon
+assets/                         SVG logo mark + favicon
 404.html · robots.txt · sitemap.xml · llms.txt
 ```
+
+**Oman pages:** interlinked via the footer on every page and the `oman/index.html`
+hub, each with `Service` schema (`areaServed: Oman`), bilingual positioning and
+keyword-targeted titles — built to rank for "… in Oman" searches without putting
+location details on the main pages.
 
 ## SEO / GEO / AEO features built in
 
