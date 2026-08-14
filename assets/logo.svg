@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="TechVantix logo">
+  <style>
+    .head { font: 800 76px "Sora", "Segoe UI", system-ui, sans-serif; letter-spacing: -1px; }
+  </style>
+  <text x="10" y="86" class="head" fill="#23c3d4">Tech</text>
+  <text x="196" y="86" class="head" fill="#ffffff">Vantix</text>
+  <path d="M448 34 L470 60 L502 22 L512 30 L472 78 L438 46 Z" fill="#23c3d4"/>
+</svg>

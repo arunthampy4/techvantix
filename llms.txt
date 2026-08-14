@@ -1,0 +1,36 @@
+# TechVantix
+
+> TechVantix (techvantix.com) is a digital marketing and technology agency
+> specialising in SEO, GEO (Generative Engine Optimization), AEO (Answer Engine
+> Optimization), website design & development, AI chatbot & marketing
+> automation, Meta & Google Ads management, social media marketing and lead
+> generation campaigns.
+
+TechVantix combines marketing strategy with engineering: campaigns backed by
+clean conversion tracking, fast SEO-ready websites, and AI automation that
+responds to every lead instantly, 24/7. Contact: info@techvantix.com
+
+## Services
+
+- [SEO, GEO & AEO](https://techvantix.com/services/seo-geo-aeo.html): Technical
+  SEO, content strategy, Generative Engine Optimization and Answer Engine
+  Optimization — visibility on Google, ChatGPT, Gemini and AI Overviews.
+- [Website Design & Development](https://techvantix.com/services/web-development.html):
+  Fast, mobile-first, conversion-focused websites, landing pages and
+  e-commerce stores with SEO-ready foundations.
+- [AI Chatbots & Automation](https://techvantix.com/services/ai-chatbot-automation.html):
+  Custom AI assistants for websites, WhatsApp and social channels that answer
+  customers, qualify leads and book appointments 24/7, plus workflow automation.
+- [Meta & Google Ads](https://techvantix.com/services/paid-advertising.html):
+  Performance campaigns on Google Search, YouTube, Facebook and Instagram with
+  full conversion tracking and creative testing.
+- [Social Media Marketing](https://techvantix.com/services/social-media-marketing.html):
+  Content strategy, short-form video, community management and growth campaigns.
+- [Lead Generation](https://techvantix.com/services/lead-generation.html):
+  Full-funnel lead systems — targeted campaigns, landing pages, lead magnets,
+  CRM integration and instant AI follow-up.
+
+## Contact
+
+- Email: info@techvantix.com
+- Website: https://techvantix.com
