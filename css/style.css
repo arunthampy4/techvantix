@@ -126,20 +126,22 @@ h1, h2, h3, h4 {
   justify-content: space-between;
   gap: 24px;
 }
-.logo { display: inline-flex; align-items: center; font-family: var(--font-head); font-size: 1.55rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1; }
-.logo .lg-tech { color: var(--teal); }
-.logo .lg-vantix { color: #fff; }
-.logo .lg-x { height: 0.94em; width: auto; margin-left: 1px; transform: translateY(1px); flex: none; }
+.logo { display: inline-flex; align-items: center; line-height: 1; flex: none; }
+.logo img { height: 38px; width: auto; display: block; }
+.site-footer .logo img { height: 42px; }
 
 .nav-links { display: flex; align-items: center; gap: 30px; }
-.nav-links a {
+.nav-links > a, .has-drop > a {
   font-size: 0.95rem;
   color: var(--muted);
   font-weight: 500;
   position: relative;
   transition: color 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
-.nav-links a::after {
+.nav-links > a::after, .has-drop > a::after {
   content: "";
   position: absolute;
   left: 0; bottom: -6px;
@@ -150,8 +152,62 @@ h1, h2, h3, h4 {
   transform-origin: left;
   transition: transform 0.3s var(--ease);
 }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links > a:hover, .nav-links > a.active, .has-drop > a:hover, .has-drop:hover > a { color: #fff; }
+.nav-links > a:hover::after, .nav-links > a.active::after, .has-drop:hover > a::after { transform: scaleX(1); }
+
+/* ---------- Services dropdown ---------- */
+.nav-item.has-drop { position: relative; }
+.has-drop .caret { font-size: 0.7em; transition: transform 0.3s var(--ease); }
+.has-drop:hover .caret { transform: rotate(180deg); }
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  padding-top: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s;
+  z-index: 120;
+}
+.has-drop:hover .dropdown, .has-drop:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.drop-inner {
+  display: flex;
+  gap: 44px;
+  padding: 28px 32px;
+  border-radius: 18px;
+  background: rgba(6, 15, 26, 0.97);
+  border: 1px solid rgba(35, 195, 212, 0.22);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55), 0 0 40px rgba(35, 195, 212, 0.07);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.drop-col { display: flex; flex-direction: column; gap: 2px; min-width: 230px; }
+.drop-head {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.drop-col a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 7px 10px;
+  margin: 0 -10px;
+  border-radius: 9px;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s, padding-left 0.25s var(--ease);
+}
+.drop-col a:hover { color: #fff; background: rgba(35, 195, 212, 0.09); padding-left: 16px; }
+.drop-col a.drop-all { color: var(--teal); font-weight: 600; margin-top: 8px; }
+.drop-col a.drop-all:hover { color: var(--teal-light); }
 
 .btn {
   display: inline-flex;
@@ -908,6 +964,8 @@ a.feature-card p { flex: 1; }
   }
   .nav-links.open { opacity: 1; pointer-events: auto; }
   .nav-links a { font-size: 1.15rem; }
+  /* On mobile the Services link goes to the full services page instead of a dropdown */
+  .has-drop .dropdown, .has-drop .caret { display: none; }
   .nav .btn-cta-desktop { display: none; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; gap: 44px; }

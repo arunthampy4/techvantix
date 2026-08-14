@@ -8,26 +8,34 @@ marketing, web development and AI automation agency.
 Pure static HTML + CSS + vanilla JavaScript. No build step, no framework,
 no dependencies — upload the files to any hosting and it works.
 
+## Clean URLs
+
+Every page is a folder with an `index.html`, so public URLs contain no `.html`:
+`techvantix.com/services/web-development/`, `techvantix.com/oman/seo-company-oman/`,
+`techvantix.com/blog/`, etc. This works on any static host; the included
+`.htaccess` also covers Apache/cPanel hosting (no directory listings, 404 page,
+redirect of accidental `/index.html` requests).
+
 ## Structure
 
 ```
 index.html                      Homepage (hero, services, why us, AI & search, process, FAQ, contact)
-services/                       Six global service pages
-  seo-geo-aeo.html · web-development.html · ai-chatbot-automation.html
-  paid-advertising.html · social-media-marketing.html · lead-generation.html
+services/                       /services/ overview page + six service pages
+  index.html · seo-geo-aeo/ · web-development/ · ai-chatbot-automation/
+  paid-advertising/ · social-media-marketing/ · lead-generation/
 oman/                           Oman local-SEO landing pages
   index.html                    Hub: Digital Marketing & Web Development Company in Oman
-  website-development-oman.html · digital-marketing-oman.html
-  social-media-marketing-oman.html · ecommerce-website-development-oman.html
-  shopify-website-development-oman.html · whatsapp-automation-oman.html
-  ai-chatbot-development-oman.html · seo-company-oman.html
+  website-development-oman/ · digital-marketing-oman/
+  social-media-marketing-oman/ · ecommerce-website-development-oman/
+  shopify-website-development-oman/ · whatsapp-automation-oman/
+  ai-chatbot-development-oman/ · seo-company-oman/
 blog/                           Blog index + articles (BlogPosting schema)
-  index.html · how-to-rank-on-chatgpt-geo-aeo.html
-  whatsapp-business-api-guide.html · seo-vs-google-ads.html
+  index.html · how-to-rank-on-chatgpt-geo-aeo/
+  whatsapp-business-api-guide/ · seo-vs-google-ads/
 css/style.css                   Design system (dark theme, teal brand accent)
 js/main.js                      Scroll reveals, counters, rotator, accordion, mobile nav, form
-assets/                         SVG logo mark + favicon
-404.html · robots.txt · sitemap.xml · llms.txt
+assets/                         Favicon (+ upload techvantix-logo.png here)
+404.html · robots.txt · sitemap.xml · llms.txt · .htaccess
 ```
 
 **Oman pages:** interlinked via the footer on every page and the `oman/index.html`
@@ -50,9 +58,10 @@ location details on the main pages.
 
 1. **Stats:** the four counters in the homepage hero are placeholders
    (marked `TODO` in `index.html`). Replace with your real numbers.
-2. **Logo:** the header uses a text+SVG recreation of the brand logo. To use
-   the official PNG instead, drop it into `assets/` and swap the `.logo`
-   markup in the header/footer for an `<img>`.
+2. **Logo:** every page loads the logo from `/assets/techvantix-logo.png`
+   (878×210). **Upload the official PNG to that exact path when deploying.**
+   Until the file exists, pages automatically fall back to the logo hosted on
+   the current WordPress site, so nothing looks broken in the meantime.
 3. **OG image:** `og:image` currently points at the logo PNG on the live
    WordPress site. For best social sharing, create a 1200×630 cover image,
    upload it as `assets/og-cover.png` and update the `og:image` /
