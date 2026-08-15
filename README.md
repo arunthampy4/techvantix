@@ -69,7 +69,16 @@ location details on the main pages.
 4. **Contact form:** the form opens the visitor's email app pre-filled
    (mailto to info@techvantix.com) — works with zero backend. For silent
    in-page submission, connect a form service (e.g. Formspree/Web3Forms) by
-   changing the handler in `js/main.js`.
+   changing the handler in `js/main.js` / `contact/index.html`.
+5. **Google reCAPTCHA (contact page):** the `/contact/` form ships with a
+   built-in "I'm not a robot" checkbox. To switch it to the official Google
+   reCAPTCHA v2 widget: create free keys at
+   https://www.google.com/recaptcha/admin for domain `techvantix.com`
+   (v2 "I'm not a robot" Checkbox), then paste the **site key** into
+   `RECAPTCHA_SITE_KEY = ""` near the bottom of `contact/index.html`.
+   The page swaps in the real widget automatically. (Note: full server-side
+   token verification requires a form backend — connect one of the form
+   services above and it will verify the token for you.)
 5. **Google Search Console:** after launch, verify the domain and submit
    `https://techvantix.com/sitemap.xml`.
 6. **Analytics:** add your GA4 / Meta Pixel snippets before `</head>` on
