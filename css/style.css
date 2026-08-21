@@ -210,6 +210,16 @@ h1, h2, h3, h4 {
 .drop-col a.drop-all { color: var(--teal); font-weight: 600; margin-top: 8px; }
 .drop-col a.drop-all:hover { color: var(--teal-light); }
 
+/* Wide mega-menu: three grouped columns of sub-links */
+.dropdown-wide .drop-inner { gap: 34px; padding: 30px 34px; }
+.dropdown-wide .drop-col { min-width: 232px; }
+.dropdown-wide .drop-col a { font-size: 0.875rem; }
+@media (max-width: 1100px) {
+  .dropdown-wide .drop-inner { gap: 24px; padding: 24px; }
+  .dropdown-wide .drop-col { min-width: 200px; }
+}
+
+
 .btn {
   display: inline-flex;
   align-items: center;
