@@ -95,24 +95,48 @@
     counters.forEach(animateCounter);
   }
 
-  /* ---------- Hero word rotator ---------- */
+  /* ---------- Hero word rotator ----------
+     Each phrase rolls up behind a mask while the box eases to that
+     phrase's own width — so the line stays centred under the headline. */
   var rotator = document.querySelector(".rotator");
-  if (rotator && !prefersReduced) {
+  if (rotator) {
     var words = Array.prototype.slice.call(rotator.querySelectorAll(".word"));
-    // Size the rotator to its widest word so layout doesn't jump.
-    var widest = 0;
-    words.forEach(function (w) { widest = Math.max(widest, w.offsetWidth); });
-    if (widest) rotator.style.minWidth = widest + "px";
+    var line = rotator.parentElement;
+    var rule = line && line.parentElement
+      ? line.parentElement.querySelector(".rotator-rule") : null;
     var idx = 0;
-    setInterval(function () {
-      var current = words[idx];
-      idx = (idx + 1) % words.length;
-      var next = words[idx];
-      current.classList.remove("on");
-      current.classList.add("off");
-      next.classList.remove("off");
-      next.classList.add("on");
-    }, 2600);
+
+    function widthOf(el) {
+      // Words are absolutely positioned, so offsetWidth is the text width.
+      return Math.ceil(el.getBoundingClientRect().width);
+    }
+
+    function fit(el) {
+      var w = widthOf(el);
+      if (!w) return;
+      rotator.style.setProperty("--rw", w + "px");
+      if (rule) rule.style.setProperty("--rw", w + "px");
+    }
+
+    fit(words[0]);
+    // Re-measure once webfonts land, otherwise widths are fallback-font sized.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { fit(words[idx]); });
+    }
+    window.addEventListener("resize", function () { fit(words[idx]); });
+
+    if (!prefersReduced) {
+      setInterval(function () {
+        var current = words[idx];
+        idx = (idx + 1) % words.length;
+        var next = words[idx];
+        current.classList.remove("on");
+        current.classList.add("off");
+        next.classList.remove("off");
+        next.classList.add("on");
+        fit(next);
+      }, 3400);
+    }
   }
 
   /* ---------- Service card cursor glow ---------- */

@@ -293,25 +293,67 @@ h1, h2, h3, h4 {
   font-size: clamp(2.5rem, 6.2vw, 4.4rem);
   margin-bottom: 10px;
 }
+/* Rotating headline — words roll up behind a mask, always centred,
+   with the box easing to each phrase's width so nothing jumps. */
 .hero .rotator-line {
-  display: block;
-  min-height: 1.25em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .rotator {
-  display: inline-block;
   position: relative;
-  text-align: left;
+  display: block;
+  height: 1.16em;                 /* one line box */
+  padding-bottom: 0.22em;         /* room for descenders (g, p, y) */
+  overflow: hidden;
+  width: var(--rw, auto);
+  transition: width 0.62s var(--ease);
+  will-change: width;
 }
 .rotator .word {
   position: absolute;
-  left: 0; top: 0;
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+  left: 50%;                      /* centred, whatever the length */
+  top: 0;
   white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-50%) translateY(105%);
+  filter: blur(7px);
+  transition: transform 0.62s var(--ease), opacity 0.44s var(--ease), filter 0.44s var(--ease);
 }
-.rotator .word.on { position: relative; opacity: 1; transform: translateY(0); }
-.rotator .word.off { opacity: 0; transform: translateY(-24px); }
+.rotator .word.on {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  filter: blur(0);
+}
+.rotator .word.off {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-105%);
+  filter: blur(7px);
+}
+/* Gradient rule that sweeps in under each phrase */
+.rotator-rule {
+  display: block;
+  height: 3px;
+  width: var(--rw, 0);
+  margin: 0.18em auto 0;
+  border-radius: 3px;
+  background: var(--grad);
+  opacity: 0.85;
+  transform-origin: center;
+  animation: rule-sweep 3.4s var(--ease) infinite;
+  transition: width 0.62s var(--ease);
+}
+@keyframes rule-sweep {
+  0%   { transform: scaleX(0); opacity: 0; }
+  14%  { transform: scaleX(1); opacity: 0.85; }
+  86%  { transform: scaleX(1); opacity: 0.85; }
+  100% { transform: scaleX(0); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rotator { overflow: visible; width: auto !important; }
+  .rotator .word { filter: none; }
+  .rotator-rule { display: none; }
+}
 
 .hero-sub {
   color: var(--muted);
