@@ -808,15 +808,70 @@ h1, h2, h3, h4 {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 44px;
-  margin-bottom: 50px;
+  grid-template-columns: 1.7fr repeat(4, minmax(0, 1fr));
+  gap: 40px 32px;
+  align-items: start;
+  margin-bottom: 44px;
 }
-.footer-brand p { color: var(--muted); font-size: 0.93rem; margin-top: 18px; max-width: 300px; }
-.footer-col h4 { font-size: 0.95rem; margin-bottom: 18px; color: #fff; }
-.footer-col li { margin-bottom: 11px; }
-.footer-col a { color: var(--muted); font-size: 0.92rem; transition: color 0.25s, padding-left 0.25s; }
+.footer-brand p { color: var(--muted); font-size: 0.92rem; margin-top: 18px; max-width: 290px; }
+.footer-mail { display: inline-block; margin-top: 16px; color: var(--teal); font-size: 0.92rem; font-weight: 500; }
+.footer-mail:hover { color: var(--teal-light); }
+.footer-col h4 {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { color: var(--muted); font-size: 0.9rem; transition: color 0.25s, padding-left 0.25s; }
 .footer-col a:hover { color: var(--teal); padding-left: 5px; }
+
+/* Compact 'Serving Oman' row — keeps the local pages linked without
+   turning the footer into a wall of text. */
+.footer-local {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.footer-local .fl-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--teal);
+  white-space: nowrap;
+  flex: none;
+}
+.footer-local .fl-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  flex: 1;
+}
+.footer-local .fl-links a {
+  color: var(--muted);
+  font-size: 0.86rem;
+  transition: color 0.22s;
+  white-space: nowrap;
+}
+.footer-local .fl-links a:hover { color: var(--teal); }
+
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1.4fr repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-local { flex-direction: column; gap: 12px; }
+  .footer-local .fl-links { gap: 8px 16px; }
+}
+
 .footer-bottom {
   display: flex;
   align-items: center;
@@ -1038,7 +1093,6 @@ a.feature-card p { flex: 1; }
   .services-grid, .feature-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .process-step::after { display: none; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
   .split { grid-template-columns: 1fr; gap: 48px; }
 }
 
@@ -1071,7 +1125,6 @@ a.feature-card p { flex: 1; }
 
 @media (max-width: 560px) {
   .services-grid, .feature-grid, .feature-grid.cols-2, .process-grid, .blog-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 34px; }
   .hero-cta .btn { width: 100%; }
 }
 
