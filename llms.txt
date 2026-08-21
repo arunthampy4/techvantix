@@ -12,18 +12,30 @@ responds to every lead instantly, 24/7. Contact: info@techvantix.com
 
 ## Services
 
-- [SEO, GEO & AEO](https://techvantix.com/services/seo-geo-aeo/): Technical
-  SEO, content strategy, Generative Engine Optimization and Answer Engine
-  Optimization — visibility on Google, ChatGPT, Gemini and AI Overviews.
+- [SEO Services](https://techvantix.com/services/seo/): Technical SEO,
+  keyword and intent research, content strategy, local SEO and authority.
+- [GEO — Generative Engine Optimization](https://techvantix.com/services/geo/):
+  Entity building, structured data and citable content so ChatGPT, Gemini and
+  Perplexity recommend the brand by name.
+- [AEO — Answer Engine Optimization](https://techvantix.com/services/aeo/):
+  FAQ schema, snippet-ready formatting and question-led content that win
+  featured snippets, voice results and AI Overviews.
+- [SEO, GEO & AEO Overview](https://techvantix.com/services/seo-geo-aeo/):
+  How the three search disciplines combine into one program.
 - [Website Design & Development](https://techvantix.com/services/web-development/):
   Fast, mobile-first, conversion-focused websites, landing pages and
   e-commerce stores with SEO-ready foundations.
 - [AI Chatbots & Automation](https://techvantix.com/services/ai-chatbot-automation/):
   Custom AI assistants for websites, WhatsApp and social channels that answer
   customers, qualify leads and book appointments 24/7, plus workflow automation.
-- [Meta & Google Ads](https://techvantix.com/services/paid-advertising/):
-  Performance campaigns on Google Search, YouTube, Facebook and Instagram with
-  full conversion tracking and creative testing.
+- [Google Ads Management](https://techvantix.com/services/google-ads/):
+  Search, Shopping, YouTube and remarketing with verified conversion tracking.
+- [Meta Ads](https://techvantix.com/services/meta-ads/): Facebook and Instagram
+  campaigns with creative production and Conversions API tracking.
+- [E-commerce & Shopify Development](https://techvantix.com/services/ecommerce-development/):
+  Shopify, WooCommerce and custom online stores built to convert.
+- [WhatsApp Automation & Business API](https://techvantix.com/services/whatsapp-automation/):
+  API setup, AI chatbots, broadcast campaigns and shared team inbox.
 - [Social Media Marketing](https://techvantix.com/services/social-media-marketing/):
   Content strategy, short-form video, community management and growth campaigns.
 - [Lead Generation](https://techvantix.com/services/lead-generation/):
@@ -45,6 +57,10 @@ Sultanate) with bilingual English/Arabic delivery:
 - [WhatsApp Automation & WhatsApp Business API in Oman](https://techvantix.com/oman/whatsapp-automation-oman/)
 - [AI Chatbot Development Company in Oman](https://techvantix.com/oman/ai-chatbot-development-oman/)
 - [SEO Company in Oman](https://techvantix.com/oman/seo-company-oman/)
+- [GEO & AEO Services in Oman](https://techvantix.com/oman/geo-aeo-oman/)
+- [Google Ads Company in Oman](https://techvantix.com/oman/google-ads-oman/)
+- [Facebook & Instagram Ads Agency in Oman](https://techvantix.com/oman/meta-ads-oman/)
+- [Lead Generation Company in Oman](https://techvantix.com/oman/lead-generation-oman/)
 
 ## Blog
 
